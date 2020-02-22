@@ -14,15 +14,23 @@ import com.vaadin.flow.router.Route;
  */
 @Route("fontawesome")
 @NpmPackage(value = "@fortawesome/fontawesome-free", version = "5.12.1")
-@CssImport("@fortawesome/fontawesome-free/css/all.min.css")
+@JsModule("@fortawesome/fontawesome-free/js/fontawesome")
+@JsModule("@fortawesome/fontawesome-free/js/solid")
+@JsModule("@fortawesome/fontawesome-free/js/brands")
 public class FontAwesomeResourceView extends VerticalLayout {
 
     public FontAwesomeResourceView() {
         Html html = new Html("<span><i class=\"fa fa-camera-retro fa-lg\"></i> fa-lg\n" +
-                "<i class=\"fa fa-camera-retro fa-2x\"></i> fa-2x\n" +
-                "<i class=\"fa fa-camera-retro fa-3x\"></i> fa-3x\n" +
-                "<i class=\"fa fa-camera-retro fa-4x\"></i> fa-4x\n" +
-                "<i class=\"fa fa-camera-retro fa-5x\"></i></span>");
+                "<i class=\"fas fa-camera-retro fa-2x\"></i> fa-2x\n" +
+                "<i class=\"fas fa-camera-retro fa-3x\"></i> fa-3x\n" +
+                "<i class=\"fas fa-camera-retro fa-4x\"></i> fa-4x\n" +
+                "<i class=\"fas fa-camera-retro fa-5x\"></i></span>");
         add(html);
+        Html htmlb = new Html("<span><i class=\"fab fa-font-awesome fa-lg\"></i> fa-lg\n" +
+                "<i class=\"fab fa-font-awesome fa-2x\"></i> fa-2x\n" +
+                "<i class=\"fab fa-font-awesome fa-3x\"></i> fa-3x\n" +
+                "<i class=\"fab fa-font-awesome fa-4x\"></i> fa-4x\n" +
+                "<i class=\"fab fa-font-awesome fa-5x\"></i></span>");
+        add(htmlb);
     }
 }

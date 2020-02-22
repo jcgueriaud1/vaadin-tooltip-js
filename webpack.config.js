@@ -8,7 +8,7 @@ const flowDefaults = require('./webpack.generated.js');
 
 
 module.exports = merge(flowDefaults, {
-    module: {
+     module: {
         rules: [
             {
                 test: /\.svg$/,
@@ -18,14 +18,40 @@ module.exports = merge(flowDefaults, {
                     },
                 ],
             },
+            // {
+            //     test: /\.scss$/,
+            //     use: [{
+            //         loader: 'style-loader' // creates style nodes from JS strings
+            //     }, {
+            //         loader: 'css-loader'   // transates CSS into CommonJS
+            //     }, {
+            //         loader: 'sass-loader'  // compiles Sass to CSS
+            //     }]
+            //    // loader: 'style-loader!css-loader!sass-loader'
+            // }, {
+            //     test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+            //     loader: "url?limit=10000&mimetype=application/font-woff"
+            // }, {
+            //     test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+            //     loader: "url?limit=10000&mimetype=application/font-woff"
+            // }, {
+            //     test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+            //     loader: "url?limit=10000&mimetype=application/octet-stream"
+            // }, {
+            //     test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+            //     loader: "file"
+            // }, {
+            //     test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+            //     loader: "url?limit=10000&mimetype=image/svg+xml"
+            // }
         ],
     },
-    // plugins: [
-    //     new webpack.ProvidePlugin({
-    //         jQuery: 'jquery',
-    //         $: 'jquery'
-    //     }),
-    // ],
+    plugins: [
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery'
+        }),
+    ],
 
 });
 
